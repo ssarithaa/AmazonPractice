@@ -5,8 +5,10 @@
     <classes>
       <class name="com.automation.amazonpractice.Mainflow">
         <methods>
+          <include name="searchItem"/>
           <include name="openurl"/>
           <include name="login"/>
+          <include name="getdata"/>
         </methods>
       </class> <!-- com.automation.amazonpractice.Mainflow -->
     </classes>

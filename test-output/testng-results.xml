@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="2" passed="2" failed="0" skipped="0">
+<testng-results total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-03-05T11:49:55Z" name="Default suite" finished-at="2018-03-05T11:50:13Z" duration-ms="18107">
+  <suite started-at="2018-03-07T09:03:19Z" name="Default suite" finished-at="2018-03-07T09:04:00Z" duration-ms="41835">
     <groups>
     </groups>
-    <test started-at="2018-03-05T11:49:55Z" name="Default test" finished-at="2018-03-05T11:50:13Z" duration-ms="18107">
+    <test started-at="2018-03-07T09:03:19Z" name="Default test" finished-at="2018-03-07T09:04:00Z" duration-ms="41835">
       <class name="com.automation.amazonpractice.Mainflow">
-        <test-method signature="openurl()[pri:0, instance:com.automation.amazonpractice.Mainflow@63475ace]" started-at="2018-03-05T17:19:55Z" name="openurl" finished-at="2018-03-05T17:20:06Z" duration-ms="11846" status="PASS">
+        <test-method is-config="true" signature="getdata()[pri:0, instance:com.automation.amazonpractice.Mainflow@10aa41f2]" started-at="2018-03-07T14:33:19Z" name="getdata" finished-at="2018-03-07T14:33:19Z" duration-ms="425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getdata -->
+        <test-method signature="openurl()[pri:0, instance:com.automation.amazonpractice.Mainflow@10aa41f2]" started-at="2018-03-07T14:33:19Z" name="openurl" finished-at="2018-03-07T14:33:34Z" duration-ms="15405" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openurl -->
-        <test-method signature="login()[pri:0, instance:com.automation.amazonpractice.Mainflow@63475ace]" started-at="2018-03-05T17:20:06Z" name="login" finished-at="2018-03-05T17:20:13Z" depends-on-methods="com.automation.amazonpractice.Mainflow.openurl" duration-ms="6244" status="PASS">
+        <test-method signature="login()[pri:0, instance:com.automation.amazonpractice.Mainflow@10aa41f2]" started-at="2018-03-07T14:33:34Z" name="login" finished-at="2018-03-07T14:33:46Z" depends-on-methods="com.automation.amazonpractice.Mainflow.openurl" duration-ms="11975" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
+        <test-method signature="searchItem()[pri:0, instance:com.automation.amazonpractice.Mainflow@10aa41f2]" started-at="2018-03-07T14:33:46Z" name="searchItem" finished-at="2018-03-07T14:34:00Z" depends-on-methods="com.automation.amazonpractice.Mainflow.login" duration-ms="14020" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchItem -->
       </class> <!-- com.automation.amazonpractice.Mainflow -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
