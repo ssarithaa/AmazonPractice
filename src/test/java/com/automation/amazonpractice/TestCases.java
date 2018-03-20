@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.automation.browseractions.BrowserInteraction;
+import com.automation.browseractions.DriverSingleton;
 import com.automation.pageObject.HomePageObject;
 import com.automation.pageObject.LoginPageObject;
 import com.automation.pageObject.SearchPageObjects;
@@ -19,10 +20,11 @@ public class TestCases {
 	String url = "https://www.amazon.in";
 
 	WebDriver driver;
-	BrowserInteraction browserObj;
+	public BrowserInteraction browserObj;
 	LoginPageObject loginobj;
 	HomePageObject homeobj;
 	SearchPageObjects searchobj;
+	DriverSingleton driverinstance;
 
 	@BeforeClass
 	public void getData() throws IOException {
@@ -35,8 +37,10 @@ public class TestCases {
 		// this.browser = cell.getStringCellValue();
 
 		this.browserObj = new BrowserInteraction();
-		this.browserObj.setDriver(this.browser);
-		this.driver = this.browserObj.getDriver();
+		this.driverinstance = DriverSingleton.getDriverinstance();
+		this.driverinstance.setDriver(this.browser);
+		this.driver = this.driverinstance.getDriver();
+
 		this.loginobj = new LoginPageObject(this.driver);
 		this.homeobj = new HomePageObject(this.driver);
 		this.searchobj = new SearchPageObjects(this.driver);
@@ -48,7 +52,10 @@ public class TestCases {
 
 		this.driver.get(this.url);
 		String title = this.driver.getTitle();
+		// this.driver.manage().window().maximize();
 		Assert.assertTrue(title.contains("Amazon"));
+
+		// this.browserObj.takeScreenshot();
 
 	}
 
@@ -73,7 +80,12 @@ public class TestCases {
 		String clickeditemname = this.browserObj.openinnewtab(this.searchobj.itemToSelectPath());
 		this.browserObj.switchtabs();
 		String selecteditem = this.searchobj.selectedProductnamePath().getText();
-		Assert.assertTrue(selecteditem.contains(clickeditemname));
+		System.out.println(clickeditemname);
+		System.out.println(selecteditem);
+		// SoftAssert softassertion = new SoftAssert();
+		// softassertion.assertTrue(clickeditemname.contains("fdfdgd"));
+		// softassertion.assertAll();
+		Assert.assertTrue(clickeditemname.contains(selecteditem));
 
 	}
 

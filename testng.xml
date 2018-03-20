@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AmazonAutoSuite" >
+
+<!--  <listeners>
+<listener class-name="com.automation.amazonpractice.Listeners"/>
+
+</listeners> -->
+
+<listeners>
+<listener class-name="com.automation.amazonpractice.Listeners"/>
+<listener class-name="com.automation.amazonpractice.ExtentReporterNG"/>
+
+</listeners>
+  <test name="AddingtoCart">
+    <classes>
+      <class name="com.automation.amazonpractice.TestCases"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
